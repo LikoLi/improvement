@@ -12,25 +12,49 @@
       <iframe id="show-iframe"  frameborder=0 :src="iframeUrl" width="100%" :style="{ height: iframeHeight + 'px'}" :key="iframeUrl"></iframe>
     </div>
     <div id="bd-right">
-
+      <div class="bd-right-switch">
+        <el-switch v-model="priview" active-color="#13ce66" inactive-color="#ccc" class="bd-switch" active-text="预览"></el-switch>
+      </div>
+      <div v-show="!priview" :style="{ height: screenHeight / 2 + 'px'}">
+        <el-input type="textarea" :rows="30" v-model="content"></el-input>
+      </div>
+      <div v-show="priview" id="bd-markdown-show" :style="{ height: screenHeight / 2 + 'px'}">
+        <markdown-it-vue class="md-body" :content="content" :options="options" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
+import MarkdownItVue from 'markdown-it-vue'
+import 'markdown-it-vue/dist/markdown-it-vue.css'
 
 export default {
   name: 'app',
   components: {
     // HelloWorld
+    MarkdownItVue
   },
   data () {
     return {
       inputUrl: 'https://',
       iframeUrl: 'https://www.baidu.com',
-      screenHeight: document.body.clientHeight,
-      iframeHeight: document.documentElement.clientHeight - 85
+      screenHeight: document.documentElement.clientHeight,
+      iframeHeight: document.documentElement.clientHeight - 85,
+      content: '# your markdown content',
+      options: {
+        markdownIt: {
+          linkify: true
+        },
+        linkAttributes: {
+          attrs: {
+            target: '_self',
+            rel: 'noopener'
+          }
+        }
+      },
+      priview: false
     }
   },
   methods: {
@@ -75,7 +99,6 @@ export default {
   float: right;
   width: 50%;
   height: 100px;
-  background-color: aqua;
 }
 
 #url-form {
@@ -84,5 +107,19 @@ export default {
 
 #url-input {
   width: 400px;
+}
+
+.md-body {
+  text-align: left;
+  margin-left: 20px;
+}
+
+.bd-right-switch {
+  height: 40px;
+}
+
+.bd-switch {
+  float: right;
+  margin: 10px 10px 10px 0;
 }
 </style>
