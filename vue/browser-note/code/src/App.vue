@@ -38,8 +38,8 @@ export default {
   },
   data () {
     return {
-      inputUrl: 'https://',
-      iframeUrl: 'https://www.baidu.com',
+      inputUrl: 'https://lingcoder.github.io/OnJava8/#/',
+      iframeUrl: 'https://lingcoder.github.io/OnJava8/#/',
       screenHeight: document.documentElement.clientHeight,
       iframeHeight: document.documentElement.clientHeight - 85,
       content: '# your markdown content',
@@ -115,7 +115,7 @@ export default {
 }
 
 .bd-right-switch {
-  height: 40px;
+  height: 62px;
 }
 
 .bd-switch {
