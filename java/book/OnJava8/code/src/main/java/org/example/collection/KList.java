@@ -19,6 +19,8 @@ import java.util.stream.Stream;
  */
 public class KList {
 
+    static Integer[] arr = new Integer[8];
+
     public static void main(String[] args) {
         List<User> userList = new ArrayList<>();
         User user = new User("liko", 26);
@@ -56,7 +58,10 @@ public class KList {
         integerList.add(3);
         integerList.add(5);
 
-        integerList.remove(5);
+        println();
+        integerList.toArray(arr);
+        System.out.println(Arrays.toString(arr));
+
     }
 
     private static void println() {
