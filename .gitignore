@@ -23,4 +23,5 @@
 hs_err_pid*
 
 # Vue
-dist_electron/
+dist_electron/*
+.idea/*
