@@ -54,9 +54,13 @@ List承诺将元素保存在特定的序列中。 List 接口在 Collection 的�
 3. 使用 `hasNext()` 方法检查序列中是否还有元素。
 4. 使用 `remove()` 方法将迭代器最近返回的那个元素删除。
 
+迭代器统一了对集合的访问
 
+### ListIterator
 
+**ListIterator** 是一个更强大的 **Iterator** 子类型，它只能由各种 **List** 类生成。 **Iterator** 只能向前移动，而 **ListIterator** 可以双向移动。它可以生成迭代器在列表中指向位置的后一个和前一个元素的索引，并且可以使用 `set()` 方法替换它访问过的最近一个元素。可以通过调用 `listIterator()` 方法来生成指向 **List** 开头处的 **ListIterator** ，还可以通过调用 `listIterator(n)` 创建一个一开始就指向列表索引号为 **n** 的元素处的 **ListIterator** 。
 
+## 链表LinkedList
 
-
+**LinkedList** 也像 **ArrayList** 一样实现了基本的 **List** 接口，但它在 **List** 中间执行插入和删除操作时比 **ArrayList** 更高效。然而,它在随机访问操作效率方面却要逊色一些。
 
