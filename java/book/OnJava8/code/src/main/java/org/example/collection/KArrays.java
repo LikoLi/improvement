@@ -8,5 +8,10 @@ public class KArrays {
         List<String> strings = Arrays.asList("liko", "lee");
 //        strings.add("123");
         System.out.println(strings);
+
+        String[] strArr = new String[3];
+        for (String s : strArr) {
+            
+        }
     }
 }
