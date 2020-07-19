@@ -62,6 +62,26 @@ public class KList {
         integerList.toArray(arr);
         System.out.println(Arrays.toString(arr));
 
+        println();
+        ArrayList<String> sizeList = new ArrayList<>();
+        sizeList.add("1");
+        sizeList.add("2");
+        sizeList.add("3");
+        sizeList.add("4");
+        sizeList.add("5");
+        sizeList.add("6");
+        sizeList.add("7");
+        sizeList.add("8");
+        sizeList.add("9");
+        sizeList.add("10");
+        sizeList.add("11");
+        sizeList.add("12");
+        sizeList.add("13");
+        sizeList.add("14");
+        sizeList.add("15");
+        sizeList.add("16");
+
+
     }
 
     private static void println() {
