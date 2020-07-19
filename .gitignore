@@ -27,3 +27,4 @@ dist_electron/
 .idea/
 dist/
 .DS_Store
+*.iml
