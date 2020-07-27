@@ -27,6 +27,10 @@ public class Pets {
     public static Pet get() {
         return new Pet("GET OBJECT");
     }
+
+    public static Pet[] array(int i) {
+        return list(i).toArray(new Pet[i]);
+    }
 }
 
 @Data
