@@ -2,7 +2,9 @@ package org.example.cron;
 
 import org.springframework.scheduling.support.CronSequenceGenerator;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -25,6 +27,5 @@ public class CronTest {
             Date next = generator.next(calendar.getTime());
             System.out.println(format.format(next));
         }
-
     }
 }

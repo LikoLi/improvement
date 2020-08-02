@@ -18,4 +18,6 @@ public class ServiceDescriptor {
     private String method;
     private String returnType;
     private String[] parameterTypes;
+
+    public static 
 }
