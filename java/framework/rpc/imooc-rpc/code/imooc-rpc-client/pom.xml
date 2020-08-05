@@ -12,4 +12,30 @@
     <artifactId>imooc-rpc-client</artifactId>
 
 
+    <dependencies>
+        <dependency>
+            <groupId>cn.liko</groupId>
+            <artifactId>imooc-rpc-proto</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.liko</groupId>
+            <artifactId>imooc-rpc-codec</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.liko</groupId>
+            <artifactId>imooc-rpc-common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.liko</groupId>
+            <artifactId>imooc-rpc-transport</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
+    </dependencies>
 </project>
