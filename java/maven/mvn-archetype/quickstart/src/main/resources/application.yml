@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://likoli.cn:3306/timeplan
+    username: root
+    password: qwertyuiop
+
+mybatis:
+  type-aliases-package: cn.liko.web.archetype.quickstart.model
+  mapper-locations: classpath:mapper/*.xml

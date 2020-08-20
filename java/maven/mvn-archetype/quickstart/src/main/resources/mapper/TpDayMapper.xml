@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.liko.web.archetype.quickstart.mapper.TpDayMapper">
+  <resultMap id="BaseResultMap" type="cn.liko.web.archetype.quickstart.model.TpDay">
+    <id column="TP_DAY_ID" jdbcType="INTEGER" property="tpDayId" />
+    <result column="DAY" jdbcType="DATE" property="day" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="UPDATE_TIME" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    TP_DAY_ID, `DAY`, CREATE_TIME, UPDATE_TIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from TP_DAY
+    where TP_DAY_ID = #{tpDayId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from TP_DAY
+    where TP_DAY_ID = #{tpDayId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="TP_DAY_ID" keyProperty="tpDayId" parameterType="cn.liko.web.archetype.quickstart.model.TpDay" useGeneratedKeys="true">
+    insert into TP_DAY (`DAY`, CREATE_TIME, UPDATE_TIME
+      )
+    values (#{day,jdbcType=DATE}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="TP_DAY_ID" keyProperty="tpDayId" parameterType="cn.liko.web.archetype.quickstart.model.TpDay" useGeneratedKeys="true">
+    insert into TP_DAY
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="day != null">
+        `DAY`,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="day != null">
+        #{day,jdbcType=DATE},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.liko.web.archetype.quickstart.model.TpDay">
+    update TP_DAY
+    <set>
+      <if test="day != null">
+        `DAY` = #{day,jdbcType=DATE},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where TP_DAY_ID = #{tpDayId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.liko.web.archetype.quickstart.model.TpDay">
+    update TP_DAY
+    set `DAY` = #{day,jdbcType=DATE},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      UPDATE_TIME = #{updateTime,jdbcType=TIMESTAMP}
+    where TP_DAY_ID = #{tpDayId,jdbcType=INTEGER}
+  </update>
+</mapper>
