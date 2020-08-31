@@ -5,9 +5,23 @@ GET http://baidu.com
 GET https://httpbin.org/status/200
 
 > {%
+// client.test("Request executed successfully", function() {
+//     client.assert(response.status === 200, "Response status is not 200")
+// });
+client.global.set("rspStatus", response.status);
+client.assert(client.global.get("rspStatus") === "200", "global set is not take effect！");
+ %}
+
+###
+
+GET https://httpbin.org/status/{{rspStatus}}
+
+> {%
 client.test("Request executed successfully", function() {
-    client.assert(response.status === 200, "Response status is not 200")
+    client.assert(client.global.get("rspStatus") === "200", "global set is not take effect！");
+    client.assert(response.status == client.global.get("rspStatus"), "Response status is not " + client.global.get("rspStatus"));
 });
  %}
 
 ###
+
